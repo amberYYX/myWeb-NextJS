@@ -1,20 +1,32 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Head from 'next/head';
+import styles from './layout.module.css';
+import utilStyles from '../styles/utils.module.css';
+import Link from 'next/link';
+import Nav from '../components/nav';
+import MyCarousel from '../components/carousel';
 
-const name = 'Amber'
-export const siteTitle = 'Next.js Sample Website'
+const name = 'Amber';
+export const siteTitle = 'Next.js Sample Website';
 
-export default function Layout({
+const navStyle={
+  marginLeft: '100px',
+  marginTop: "20px"
+};
+
+const Layout = ({
   children,
   home
 }: {
   children: React.ReactNode
   home?: boolean
-}) {
+}) => {
   return (
+    <div>
+      <div style={navStyle}>
+      <Nav ></Nav>
+      </div>
     <div className={styles.container}>
+
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -30,14 +42,17 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+
+
       <header className={styles.header}>
         {home ? (
           <>
-            <img
+            {/* <img
               src="/images/profile.png"
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
               alt={name}
-            />
+            /> */}
+            <MyCarousel></MyCarousel>
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
@@ -68,5 +83,8 @@ export default function Layout({
         </div>
       )}
     </div>
-  )
-}
+    </div>
+  );
+};
+
+export default Layout;

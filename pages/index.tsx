@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
+import Nav from '../components/nav'
 import { GetStaticProps } from 'next'
 
 export default function Home({
@@ -20,12 +21,19 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
+
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
+        <p >[Your Self Introduction]</p>
         <p>
           (This is a sample website - you’ll be building a site like this in{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
+      </section>
+      <section>
+        <div className="p-4 shadow rounded bg-white">
+          <h1 className="text-purple-500 leading-normal">Next.js</h1>
+          <p className="text-gray-500">with Tailwind CSS</p>
+        </div>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
