@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getSortedPostsData } from '../lib/posts';
 import Layout from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
+import MyCarousel from '../components/carousel';
 
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -26,6 +27,10 @@ export default function Projects ({
 
   return (
     <Layout>
+
+      <div className='container'>
+        <MyCarousel ></MyCarousel>
+      </div>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
@@ -38,8 +43,8 @@ export default function Projects ({
           ))}
         </ul>
       </section>
-</Layout>
-    
+    </Layout>
+
   );
 
 }
