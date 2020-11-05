@@ -5,6 +5,8 @@ import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import { GetStaticProps } from 'next';
+// import { ApolloClient, useQuery, ApolloProvider, HttpLink, InMemoryCache, gql } from '@apollo/client';
+
 
 export default function Home({
   allPostsData
@@ -15,6 +17,14 @@ export default function Home({
     id: string
   }[]
 }) {
+
+
+
+  // const client = new ApolloClient({
+  //   cache: new InMemoryCache(),
+  //   link: new HttpLink({ uri: 'https://fine-hyena-77.hasura.app/v1/graphql' })
+  // });
+
   return (
     <Layout home>
       <Head>
@@ -51,6 +61,7 @@ export default function Home({
         </ul>
       </section>
     </Layout>
+
   );
 }
 

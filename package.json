@@ -8,8 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.2.5",
     "@brainhubeu/react-carousel": "^1.19.26",
+    "axios": "^0.21.0",
     "date-fns": "^2.16.1",
+    "graphql": "^15.4.0",
     "gray-matter": "^4.0.2",
     "next": "^9.5.5",
     "postcss-flexbugs-fixes": "^4.2.1",
@@ -18,7 +21,8 @@
     "react-hook-form": "^6.9.6",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
-    "sass": "^1.27.0"
+    "sass": "^1.27.0",
+    "subscriptions-transport-ws": "^0.9.18"
   },
   "devDependencies": {
     "@types/brainhubeu__react-carousel": "^2.0.1",
